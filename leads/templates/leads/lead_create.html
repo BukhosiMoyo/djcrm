@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}
+ 
+Updating lead
+
+{% endblock title %}
+
+{% block content %}
+    <h3><a href="{% url "leads:lead_list" %}">Go back</a </h3>
+    <hr>
+    <h1>Create a lead</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" >Create Lead</button>
+    </form>
+        
+{% endblock %}
